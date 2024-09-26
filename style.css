@@ -20,3 +20,43 @@ details-marker { display: none; } details[open] summary ~ * { animation: sweep .
 isolate; margin-bottom: 1rem; background-color: #EEEEEE; padding: 1rem; } @keyframes sweep { 0%
 {opacity: 0; margin-top: -10px} 100% {opacity: 1; margin-top: 0px} }
 </style>
+<style>
+summary {
+    font-size: 19px;
+    font-weight: 600;
+    background-color: #F1F1F1;
+    color: #333;
+    isolation: isolate;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: -8px -4px 8px 0px #ffffff, 8px 4px 12px 0px #d1d9e6;
+    border-radius: 0.25rem;
+    text-align: left;
+    cursor: pointer;
+    position: relative;
+}
+details > summary::after { 
+    position: absolute; 
+    content: "+"; 
+    right: 20px; 
+}
+details[open] > summary::after { 
+    position: absolute; 
+    content: "-"; 
+    right: 20px; 
+}
+details > summary::-webkit-details-marker { 
+    display: none; 
+}
+details[open] summary ~ * { 
+    animation: sweep .5s ease-in-out; 
+    isolation: isolate; 
+    margin-bottom: 1rem; 
+    background-color: #EEEEEE; 
+    padding: 1rem; 
+}
+@keyframes sweep { 
+    0% {opacity: 0; margin-top: -10px} 
+    100% {opacity: 1; margin-top: 0px} 
+}
+</style>
